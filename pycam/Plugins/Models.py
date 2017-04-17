@@ -18,6 +18,7 @@ You should have received a copy of the GNU General Public License
 along with PyCAM.  If not, see <http://www.gnu.org/licenses/>.
 """
 
+import pycam.Flow.data_models
 import pycam.Plugins
 from pycam.Utils import get_non_conflicting_name
 
@@ -162,7 +163,8 @@ class Models(pycam.Plugins.ListPluginBase):
         return None
 
     def add_model(self, model, name=None, name_template="Model #%d", color=None):
-        model_dict = ModelEntity(model)
+        # TODO: switch to new data_model
+        model_dict = pycam.Flow.data_models.Model(model)
         if not name:
             name = get_non_conflicting_name(name_template, [m["name"] for m in self])
         model_dict["name"] = name
@@ -173,10 +175,3 @@ class Models(pycam.Plugins.ListPluginBase):
         model_dict["color"] = color
         model_dict["visible"] = True
         self.append(model_dict)
-
-
-class ModelEntity(pycam.Plugins.ObjectWithAttributes):
-
-    def __init__(self, model):
-        super(ModelEntity, self).__init__("model")
-        self.model = model
