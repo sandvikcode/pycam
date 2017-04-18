@@ -44,6 +44,7 @@ class MillingStyle(Enum):
     CONVENTIONAL = "conventional"
     CLIMB = "climb"
 
+
 class StartPosition(IntEnum):
     NONE = 0x0
     X = 0x1
