@@ -193,7 +193,7 @@ class MachineSetting(BaseFilter):
         return "%s=%s" % (self.settings["key"], self.settings["value"])
 
 
-class PathMode(MachineSetting):
+class CornerStyle(MachineSetting):
 
     PARAMS = ("path_mode", "motion_tolerance", "naive_tolerance")
     WEIGHT = 25
