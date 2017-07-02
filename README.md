@@ -1,52 +1,39 @@
 [![Build Status](https://travis-ci.org/SebKuzminsky/pycam.svg?branch=master)](https://travis-ci.org/SebKuzminsky/pycam)
 
-pycam : Python CAM
-==================
-
-Toolpath Generation for 3-Axis CNC machining
+# PyCAM: Toolpath Generation for 3-Axis CNC machining
 
 
-## RUNNING
+## Usage
 
-Extract the archive and run "python pycam"
+Extract the archive or checkout the sources.
 
+Graphical Interface: `scripts/pycam`
 
-## USAGE
-
-As a practical approach, you would probably: 
-
-1) for "rough" cutting,
-* use the Cylindrical cutter 
-* with the PushCutter Pathgenerator 
-* and the Polygon PostProcessor in "x" or "y" mode 
-
-2) for "semifinish" cutting,
-* use the Cylindrical/Toroidal cutter 
-* with the PushCutter Pathgenerator 
-* and the Contour PostProcessor in "xy" mode 
-
-3) "finish" cutting
-* use the Spherical cutter 
-* with the DropCutter Pathgenerator 
-* and the ZigZag PostProcessor in "x" or "y" mode
+Scripted Toolpath Processing: `scripts/pycam-flow FLOW_SPECIFICATION_FILE`
 
 
+## Documentation
 
-## BUG TRACKER
+* [Documentation](http://pycam.sf.net/)
+* [Getting started](http://pycam.sf.net/getting-started.md)
+* [FAQ](http://pycam.sf.net/faq.md)
+* [Video tutorials](http://vimeo.com/channels/pycam) / [related videos](http://www.youtube.com/results?search_query=%2B%22pycam%22+-spy+-spycam+-hidden&aq=f)
+* [Screenshots](http://pycam.sf.net/screenshots.md)
+* [Mailing lists](https://sourceforge.net/p/pycam/mailman/)
+* [User Forum](https://sourceforge.net/p/pycam/discussion/)
 
-https://github.com/SebKuzminsky/pycam/issues
+
+## Development
+
+* [Repository](https://github.com/SebKuzminsky/pycam)
+* [Issue Tracker](https://github.com/SebKuzminsky/pycam/issues)
 
 
-## CONTRIBUTORS
+## Contributors
 
 * Lode Leroy: initiated the project; developed the toolpath generation,
   collision detection, geometry, Tk interface, ...
-
 * Lars Kruse: GTK interface and many features
-
 * Paul: GCode stepping precision
-
 * Arthur Magill: distutils packaging
-
 * Sebastian Kuzminsky: debian packaging
-
