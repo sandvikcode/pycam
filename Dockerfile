@@ -10,4 +10,4 @@ RUN apt-get update && apt-get install -y python3 \
     python3-yaml \
     gir1.2-gtk-3.0
 
-CMD [ "pycam/run_gui.py" ]
+CMD [ "pycam/run_cli.py" ]
