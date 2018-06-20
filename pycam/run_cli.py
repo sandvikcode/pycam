@@ -65,7 +65,7 @@ def main_func():
         try:
             parse_yaml(fname)
         except pycam.errors.PycamBaseException as exc:
-            print("Flow description parse failure ({}): {}".format(fname, exc), file=sys.stderr)
+            # print("Flow description parse failure ({}): {}".format(fname, exc), file=sys.stderr)
             sys.exit(1)
     pycam.Utils.set_application_key("pycam-cli")
     for export in pycam.workspace.data_models.Export.get_collection():
