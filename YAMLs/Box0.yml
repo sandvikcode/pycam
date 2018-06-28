@@ -83,4 +83,4 @@ exports:
                                 - toolpath1
                 target:
                         type: file
-                        location: test_flames1.ngc
+                        location: output/Box0.ngc

@@ -6,7 +6,7 @@ models:
         model1:
                 source:
                         type: file
-                        location: samples/dumb_solid1.stl
+                        location: samples/dumb_solid1_machining_3.stl
 
 tools:
         tool1:
@@ -83,4 +83,4 @@ exports:
                                 - toolpath1
                 target:
                         type: file
-                        location: test_flames3.ngc
+                        location: output/dumb_solid1_machining_3.ngc
