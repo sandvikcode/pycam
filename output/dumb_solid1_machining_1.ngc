@@ -1,0 +1,22 @@
+; Some GCode export
+G40	; disable tool radius compensation
+G49	; disable tool length compensation
+G80	; cancel modal motion
+G54	; select coordinate system 1
+G90	; disable incremental moves
+G21	; metric
+F300	; set feedrate
+G64 P0.050000 Q0.100000	; continuous mode with tolerance and cleanup
+M5	; stop spindle
+T1 M6	; select tool
+S1200	; set spindle speed
+M3	; start spindle
+G04 P3.0	; wait for 3.0 seconds
+G0 X2.375718 Y79.166667 Z105.000000
+F50	; set feedrate
+G1 Z98.000000
+F300	; set feedrate
+G1 X0.000000
+M5	; stop spindle
+G0 Z105.000000
+M2	; end program
