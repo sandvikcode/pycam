@@ -6,7 +6,7 @@ models:
         model1:
                 source:
                         type: file
-                        location: samples/dumb_solid1_machining_1.stl
+                        location: samples/dumb_solid1_machining_3.stl
 
 tools:
         tool1:
