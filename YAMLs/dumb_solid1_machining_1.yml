@@ -1,0 +1,86 @@
+---
+# currently implemented features
+# see "yaml_flow_example.yml" for a full format description (not fully implemented)
+
+models:
+        model1:
+                source:
+                        type: file
+                        location: samples/dumb_solid1_machining_1.stl
+
+tools:
+        tool1:
+                shape: flat_bottom
+                diameter: 6
+                feed: 300
+                spindle:
+                        spin_up_enabled: true
+                        spin_up_delay: 3
+                        speed: 1200
+
+processes:
+        process_slicing:
+                strategy: slice
+                path_pattern: grid
+                overlap: 0.10
+                step_down: 1.0
+                grid_direction: x
+                milling_style: ignore
+
+bounds:
+        bounds1:
+                specification: absolute
+                lower:
+                        x: 0
+                        y: 0
+                        z: 0
+                upper:
+                        x: 95
+                        y: 95
+                        z: 100
+                reference_models:
+                        - model1
+
+tasks:
+        task1:
+                type: milling
+                tool: tool1
+                process: process_slicing
+                bounds: bounds1
+                collision_models:
+                        - model1
+
+toolpaths:
+        toolpath1:
+                source:
+                        type: task
+                        task: task1
+
+export_settings:
+        tp_settings1:
+                gcode:
+                        safety_height: 105
+                        plunge_feedrate: 50
+                        step_width:
+                                x: 0.1
+                                y: 0.1
+                                z: 0.1
+                        corner_style:
+                                mode: optimize_tolerance
+                                naive_tolerance: 0.1
+                                motion_tolerance: 0.05
+
+exports:
+        export1:
+                format:
+                        type: gcode
+                        dialect: linuxcnc
+                        comment: Some GCode export
+                        export_settings: tp_settings1
+                source:
+                        type: toolpath
+                        toolpaths:
+                                - toolpath1
+                target:
+                        type: file
+                        location: output/dumb_solid1_machining_1.ngc
