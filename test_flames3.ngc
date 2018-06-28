@@ -1,0 +1,6 @@
+; Some GCode export
+G40	; disable tool radius compensation
+G49	; disable tool length compensation
+G80	; cancel modal motion
+G54	; select coordinate system 1
+G90	; disable incremental moves
